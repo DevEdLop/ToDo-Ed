@@ -4,7 +4,7 @@ import PostView from "../components/PostView"
 
 import { useCounter, useFetch } from "../hooks/"
 
-const MultipleCustomHooks = () => {
+export const MultipleCustomHooks = () => {
 
 
     const { count, increment, decrement, reset } = useCounter(1)
@@ -35,10 +35,12 @@ const MultipleCustomHooks = () => {
                 </div>
                 <div className="d-flex justify-content-between">
                     <button className="btn btn-outline-dark"
+                        disabled={isLoading}
                         onClick={() => increment(1)}>
                         Next Post
                     </button>
                     <button className="btn btn-outline-dark"
+                        disabled={isLoading}
                         onClick={() => decrement(1)}>
                         Previous Post
                     </button>
@@ -49,5 +51,3 @@ const MultipleCustomHooks = () => {
 
     )
 }
-
-export default MultipleCustomHooks
